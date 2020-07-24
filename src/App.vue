@@ -63,10 +63,10 @@
                 <a class="sub-menu-item">Overview</a>
               </li>
               <li>
-                <a>Example <b-tag rounded>Soon</b-tag></a>
+                <a class="sub-menu-item-spaced">Example <b-tag :ellipsis="true">Soon</b-tag></a>
               </li>
               <li>
-                <a>The Web UI <b-tag rounded>Soon</b-tag></a>
+                <a class="sub-menu-item-spaced">The Web UI <b-tag>Soon</b-tag></a>
               </li>
             </ul>
           </div>
@@ -153,6 +153,10 @@ export default {
 
 .sub-menu-item {
   color: #2c3e50 !important;
+}
+
+.sub-menu-item-spaced {
+  justify-content: space-between;
 }
 
 </style>
