@@ -1,6 +1,6 @@
 # build stage
 FROM node:lts-alpine as build-stage
-WORKDIR ./tentalog-web/
+WORKDIR .
 COPY package*.json ./
 RUN yarn install
 COPY . .
