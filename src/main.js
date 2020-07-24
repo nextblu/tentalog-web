@@ -5,6 +5,11 @@ import router from './router'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
+Vue.use(VueAxios, axios)
+
 Vue.use(Buefy)
 
 

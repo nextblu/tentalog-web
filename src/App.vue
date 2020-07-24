@@ -1,43 +1,7 @@
 <template>
   <div id="app">
     <section class="hero is-info is-large has-bg-img">
-      <!--<div class="hero-head">
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-brand">
-              <a class="navbar-item">
-                <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
-              </a>
-              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navbarMenuHeroB" class="navbar-menu">
-              <div class="navbar-end">
-                <a class="navbar-item is-active">
-                  Home
-                </a>
-                <a class="navbar-item">
-                  Examples
-                </a>
-                <a class="navbar-item">
-                  Documentation
-                </a>
-                <span class="navbar-item">
-                  <a class="button is-info is-inverted">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Read the code</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>-->
+      
       <div class="hero-head">
       <b-navbar
       :transparent="true"
@@ -61,12 +25,18 @@
             <b-navbar-item>
                 <b-taglist attached>
                     <b-tag type="is-dark">TentaLog</b-tag>
-                    <b-tag type="is-info">0.5.1</b-tag>
+                    <b-tag type="is-info">{{tentalog_version}}</b-tag>
                 </b-taglist>
             </b-navbar-item>
         </template>
 
         <template slot="end">
+          <a class="button is-info is-inverted">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Read the code</span>
+              </a>
             <b-navbar-item tag="div">
                 <div class="buttons">
                     <a class="button is-primary">
@@ -93,10 +63,10 @@
                 <a class="sub-menu-item">Overview</a>
               </li>
               <li>
-                <a>Example</a>
+                <a>Example <b-tag rounded>Soon</b-tag></a>
               </li>
               <li>
-                <a>The Web UI</a>
+                <a>The Web UI <b-tag rounded>Soon</b-tag></a>
               </li>
             </ul>
           </div>
@@ -119,6 +89,26 @@
     </footer>
   </div>
 </template>
+
+<script>
+const axios = require('axios').default;
+export default {
+  data() {
+    return {
+      tentalog_version: 'loading..'
+    }
+  },
+  mounted() {
+    console.log('Getting TentaLog version.')
+    let vm = this;
+    let github_api = "https://api.github.com/repos/nextblu/tentalog/tags";
+    axios.get(github_api).then((response) => {
+      console.log(response.data[0].name)
+      vm.tentalog_version = response.data[0].name;
+    })
+  }
+}
+</script>
 
 <style>
 @import '../node_modules/typeface-roboto/index.css';
