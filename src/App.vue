@@ -90,7 +90,7 @@
           <div class="container">
             <ul>
               <li class="is-active">
-                <a>Overview</a>
+                <a class="sub-menu-item">Overview</a>
               </li>
               <li>
                 <a>Example</a>
@@ -159,6 +159,10 @@
   transform: skewX(-10deg);
   border-radius: 2px;
   font-family: Roboto;
+}
+
+.sub-menu-item {
+  color: #2c3e50 !important;
 }
 
 </style>
