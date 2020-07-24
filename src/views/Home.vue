@@ -29,7 +29,7 @@
       </div>
 
     
-      <div class="columns is-mobile">
+      <div class="columns is-desktop">
         <div class="column">
           <section>
             <b-message title="An important message" type="is-warning" has-icon aria-close-label="Close message">
