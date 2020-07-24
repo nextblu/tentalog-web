@@ -31,7 +31,7 @@
         </template>
 
         <template slot="end">
-          <a class="button is-info is-inverted">
+          <a class="button is-info is-inverted" href="https://github.com/nextblu/tentalog" target="_blank">
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
