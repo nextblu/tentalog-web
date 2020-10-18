@@ -19,7 +19,7 @@
             <b-navbar-item href="#">
                 Home
             </b-navbar-item>
-            <b-navbar-item href="https://wiki.nextblu.com/">
+            <b-navbar-item href="https://ndocs.nextblu.com/">
                 Documentation
             </b-navbar-item>
             <b-navbar-item>
